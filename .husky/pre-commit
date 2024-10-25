@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn ls-lint
+yarn lint
+yarn syncpack list-mismatches
+yarn lint-staged
+yarn type-check
+yarn test
