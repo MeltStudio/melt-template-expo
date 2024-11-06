@@ -1,19 +1,24 @@
-import { userAtom } from "@/store/auth";
-import { useAtom } from "jotai";
+import { useAtom } from 'jotai';
+
+import { userAtom } from '@/store/auth';
 
 const mockUser = {
-  id: "123",
-  name: "John Doe",
+  id: '123',
+  name: 'John Doe',
 };
 
-export const useAuth = () => {
+export const useAuth = (): {
+  user: typeof mockUser | null;
+  signIn: () => void;
+  signOut: () => void;
+} => {
   const [user, setUser] = useAtom(userAtom);
 
-  const signIn = () => {
+  const signIn = (): void => {
     setUser(mockUser);
   };
 
-  const signOut = () => {
+  const signOut = (): void => {
     setUser(null);
   };
 

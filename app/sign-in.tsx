@@ -1,14 +1,15 @@
-import { View, Button } from "react-native";
-import React from "react";
-import { useAuth } from "@/hooks/useAuth";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { router } from "expo-router";
+import { router } from 'expo-router';
+import React from 'react';
+import { Button, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function SignIn() {
+import { useAuth } from '@/hooks/useAuth';
+
+const SignIn = (): JSX.Element => {
   const { signIn } = useAuth();
-  const handleSignIn = () => {
+  const handleSignIn = (): void => {
     signIn();
-    router.replace("/");
+    router.replace('/');
   };
   return (
     <SafeAreaView>
@@ -17,4 +18,6 @@ export default function SignIn() {
       </View>
     </SafeAreaView>
   );
-}
+};
+
+export default SignIn;

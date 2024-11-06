@@ -1,10 +1,11 @@
-import { View, Text, Button, ActivityIndicator, Pressable } from "react-native";
-import React from "react";
-import { useAuth } from "@/hooks/useAuth";
-import { useAtom } from "jotai";
-import { idAtom, userAtom } from "@/store/users";
+import { useAtom } from 'jotai';
+import React from 'react';
+import { ActivityIndicator, Button, Pressable, Text, View } from 'react-native';
 
-export default function Index() {
+import { useAuth } from '@/hooks/useAuth';
+import { idAtom, userAtom } from '@/store/users';
+
+const Index = (): JSX.Element => {
   const { signOut } = useAuth();
   const [{ data, isPending, isError, isRefetching }] = useAtom(userAtom);
   const [id, setId] = useAtom(idAtom);
@@ -27,4 +28,6 @@ export default function Index() {
       )}
     </View>
   );
-}
+};
+
+export default Index;

@@ -1,8 +1,9 @@
-import React from "react";
-import { Redirect, Stack } from "expo-router";
-import { useAuth } from "@/hooks/useAuth";
+import { Redirect, Stack } from 'expo-router';
+import React from 'react';
 
-export default function Layout() {
+import { useAuth } from '@/hooks/useAuth';
+
+const Layout = (): JSX.Element => {
   const { user } = useAuth();
 
   if (!user) {
@@ -10,4 +11,6 @@ export default function Layout() {
   }
 
   return <Stack />;
-}
+};
+
+export default Layout;

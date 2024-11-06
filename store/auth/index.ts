@@ -1,8 +1,8 @@
-import { atom } from "jotai";
+import { atom } from 'jotai';
 
-const mockUser = {
-  id: "123",
-  name: "John Doe",
+type User = {
+  id: string;
+  name: string;
 };
 
-export const userAtom = atom<typeof mockUser | null>(null);
+export const userAtom = atom<User | null>(null);
