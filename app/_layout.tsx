@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import '@/globals.css';
 import 'react-native-reanimated';
 
@@ -24,8 +27,12 @@ const queryClient = new QueryClient();
 const RootLayout = (): JSX.Element | null => {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, global-require, @typescript-eslint/no-require-imports
     SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
+    Roboto: require('@/assets/fonts/Roboto-Regular.ttf'),
+    RobotoBold: require('@/assets/fonts/Roboto-Bold.ttf'),
+    RobotoItalic: require('@/assets/fonts/Roboto-Italic.ttf'),
+    RobotoLight: require('@/assets/fonts/Roboto-Light.ttf'),
+    RobotoMedium: require('@/assets/fonts/Roboto-Medium.ttf'),
   });
 
   useEffect(() => {

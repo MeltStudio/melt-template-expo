@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --base-blue: #3e79f7;
+}
+
+.primary-button {
+  @apply text-base text-white bg-base-blue;
+}
+
+.text-default {
+  @apply text-base;
+}
+
+.text-title {
+  @apply text-2xl font-bold;
+}
+
+.text-defaultSemiBold {
+  @apply text-base font-semibold;
+}
+
+.text-subtitle {
+  @apply text-lg font-bold;
+}
+
+.text-link {
+  @apply text-base text-blue-600;
+}
